@@ -8,11 +8,12 @@ import { sessionDataHandler } from "./sessionDataHandler";
 import { initConfig } from "./store/actions/initActions";
 import { ConfigState } from "./store/definitions";
 import { initLogger } from "./logger";
+import Figma from "./figma";
 
 const defaultConfig: ConfigState = {
     serverUrl: "http://localhost:3001",
     theme: {
-        isLight: true
+        isLight: false
     },
     fileAttachment: {
         enabled: true,
@@ -30,7 +31,9 @@ const initWebchat = async (config: ConfigState) => {
 
     render(
         <Provider store={store}>
-            <WebchatWidget />
+            <Figma>
+                <WebchatWidget />
+            </Figma>
         </Provider>,
         rootElement
     );

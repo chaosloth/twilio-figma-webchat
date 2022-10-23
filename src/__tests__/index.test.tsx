@@ -1,4 +1,3 @@
-import "..";
 import { Provider } from "react-redux";
 import * as reactDom from "react-dom";
 
